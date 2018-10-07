@@ -2,11 +2,12 @@
 import datetime
 import uuid
 import PyRSS2Gen
-
-FEEDLOC = "/home/hkpdev008/jobstatus.rss"
-DATALOC = "/home/hkpdev008/l16/jobstatus.txt"
+import os 
+n = os.path.dirname(os.path.abspath(__file__))
+FEEDLOC = n+"jobstatus.rss"
+DATALOC = n+"jobstatus.txt"
 TITLE = "Job Status"
-LINK = "http://104.197.206.32/"
+LINK = "Your Website Link"
 DESCRIPTION = "My job statuses"
 
 
@@ -21,10 +22,10 @@ while 1:
     desc = line
     rss_item = PyRSS2Gen.RSSItem(
         title = "Job Status",
-        link = "http://104.197.206.32/",
+        link = "Link to your website",
         description = desc,
         pubDate = datetime.datetime.now(),
-        guid = "http://104.197.206.32/"
+        guid = "Link to your website"
         )
     items.append(rss_item)
 
