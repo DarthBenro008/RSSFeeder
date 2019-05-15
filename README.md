@@ -1,20 +1,6 @@
 # RSSFeeder
-This is a RSS Feeder , that is ,it will broadcast an RSS feed if you have some kind of compilation and it fails , it can be used with:
-<ul>
-<li>Android ROM</li>
-<li>Custom Kernel</li>
-<li>Any make job</li>
-</ul>
-You can use this feeder with your make command with the ||, 
-<b> Eg: make -j32 || . feeder </b>
-<br>
-<br>
-<b>You just need to modify line 10 , 25 & 28 to your website's link in "check.py" file </b>
+This is an RSS feeder that broadcasts an RSS feed if some kind of Linux terminal task fails. You can use it for Android ROM compilation, kernel compilation, or any other task that can be either successful or a failure in the Linux terminal.
+To use the RSS feeder, <b>modify the variables' values in lines 10,25, and 28 to be your RSS server’s URL</b>. Then, add “|| . feeder” to the end of the respective command, leaving a space.<br><b>For example, if you have to use the RSS feeder for an Android ROM compilation, you have to type the command “make -j32 || . feeder” where “make -j32” is used to compile the ROM. Apart from that, you’ll need to make sure that the files are in the same directory as the current directory of the terminal executing the job.</b><br><br>
+Additionally, while this broadcasts an RSS feed, it also stores every job’s status in the “jobstatus” text file.<br><br>
+Personally, I use this to check whether an Android ROM build fails. If it does, the script broadcasts an RSS feed which, when combined with a simple applet in IFTTT, notifies me on my phone that the build failed.
 
-All your job status will be stored in jobstatus file.
-
-<b><I>Application:</I></b>
-I personally use it to check if my android build fails , this script braodcasts this using RSS , and with a simple applet in IFTTT , i get notified to my phone if my build fails.
-You can use all your creativity too use this tool.
-
-<b>Make sure all files are in the same directories!</b>
